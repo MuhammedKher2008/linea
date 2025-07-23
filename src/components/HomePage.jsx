@@ -527,7 +527,6 @@ function Home() {
                     />
                     <div className="card-body">
                       <p className="card-title ">{urun.name}</p>
-
                       <b className="card-text mb-3 d-block">${urun.price}</b>
                       <button
                         className="btn text-white rounded-0"
@@ -763,6 +762,7 @@ function Home() {
                                 className="btn text-white rounded-0"
                                 style={{ backgroundColor: "#1fc0a0" }}
                                 onClick={() => addToCart(urun)}
+                                id="livetoastbtn"
                               >
                                 add to cart
                               </button>
@@ -770,6 +770,21 @@ function Home() {
                           </div>
                         </div>
                       ))}
+                      <div className="toast-container position-fixed bottom-0 end-0 p-3">
+                        <div className="toast" id="livetoast" role="alert">
+                          <div className="toast-header">
+                            <h5>add a product</h5>
+                            <button
+                              type="button"
+                              className="btn-close"
+                              data-bs-dismiss="toast"
+                            ></button>
+                          </div>
+                          <div className="toast-body">
+                            <p>Product added successfully</p>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div className="carousel-item ">

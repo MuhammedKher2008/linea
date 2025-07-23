@@ -29,6 +29,10 @@ export const CartProvider = ({ children }) => {
       }
       return [...PrevCart, { ...product, quantity: 1 }];
     });
+
+    const toastLiveExample = document.getElementById("livetoast");
+    const toast = new bootstrap.Toast(toastLiveExample);
+    toast.show();
   };
   const removeFromCart = (productId) => {
     setCart((PrevCart) => PrevCart.filter((item) => item.id !== productId));
